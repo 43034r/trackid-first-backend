@@ -7,6 +7,6 @@ COPY * ./
 ADD controllers /app/controllers
 ADD database /app/database
 RUN ls
-RUN go build -o /monitoriong.wiki/trackid-first-backend .
+RUN go build -o /monitoriong.wiki/trackid-first-backend
 EXPOSE 5000
 CMD [ "monitoriong.wiki/trackid-first-backend" ]
