@@ -11,6 +11,17 @@ import (
 var DB *gorm.DB
 var err error
 
+// Environment variables
+/*
+var (
+	host  = os.Getenv("TI_DB_HOST")
+	port = os.Getenv("TI_DB_PORT")
+	dbName    = os.Getenv("TI_DB_NAME")
+	dbUser    = os.Getenv("TI_DB_USER")
+	password    = os.Getenv("TI_DB_PASSWORD")
+)
+*/
+
 type Trackid struct {
 	gorm.Model
 	Trackid string `json:"trackid"`
