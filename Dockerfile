@@ -1,6 +1,6 @@
 FROM golang:1.21.1-alpine
 WORKDIR /app
-COPY *.go ./
+COPY * ./
 COPY go.mod ./
 RUN go mod download
 RUN go mod tidy
