@@ -9,4 +9,4 @@ ADD database /app/database
 RUN ls
 RUN go build -o /monitoriong.wiki/trackid-first-backend
 EXPOSE 5000
-CMD [ "monitoriong.wiki/trackid-first-backend" ]
+ENTRYPOINT [ "monitoriong.wiki/trackid-first-backend" ]
