@@ -4,6 +4,9 @@ COPY go.mod ./
 RUN go mod download
 RUN go mod tidy
 COPY * ./
-RUN go build -o main .
+ADD controllers /app/
+ADD database /app/
+RUN ls
+RUN go build -o /monitoriong.wiki/trackid-first-backend .
 EXPOSE 5000
-CMD [ "/app/main" ]
+CMD [ "monitoriong.wiki/trackid-first-backend" ]
