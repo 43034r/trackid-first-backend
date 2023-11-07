@@ -1,12 +1,14 @@
 FROM golang:1.21.1
 WORKDIR /app
-COPY go.mod ./
+COPY go.mod go.sum ./
 RUN go mod download
 RUN go mod tidy
-COPY * ./
+COPY *.go ./
 ADD controllers /app/controllers
 ADD database /app/database
-RUN ls
+RUN ls -l
+RUN ls -l /app/controllers
+RUN ls -l /app/database
 RUN go build -o /monitoriong.wiki/trackid-first-backend
 EXPOSE 5000
-ENTRYPOINT [ "monitoriong.wiki/trackid-first-backend" ]
+CMD [ "monitoriong.wiki/trackid-first-backend" ]
