@@ -8,4 +8,4 @@ RUN ls -l /app/controllers
 RUN ls -l /app/database
 RUN go build -o /monitoriong.wiki/trackid-first-backend
 EXPOSE 5000
-CMD [ "monitoriong.wiki/trackid-first-backend" ]
+CMD [ "/monitoriong.wiki/trackid-first-backend" ]
