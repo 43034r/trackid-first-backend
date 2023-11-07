@@ -1,4 +1,4 @@
-FROM golang:1.23-alpine
+FROM golang:1.21.1-alpine
 WORKDIR /app
 COPY go.mod ./
 RUN go mod download
