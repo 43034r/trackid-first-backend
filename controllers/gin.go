@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"errors"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -37,6 +38,23 @@ func ReadTrackid(c *gin.Context) {
 	if res.RowsAffected == 0 {
 		c.JSON(http.StatusNotFound, gin.H{
 			"message": "Trackid not found",
+		})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"Trackid": Trackid,
+	})
+	return
+}
+
+func ReadTid(c *gin.Context) {
+	var Trackid database.Trackid
+	tidq := c.Param("tid")
+	res := database.DB.Select("SELECT *")
+	fmt.Println(&Trackid, tidq)
+	if res.RowsAffected == 0 {
+		c.JSON(http.StatusNotFound, gin.H{
+			"message": "TrackNumid not found", "tidq": tidq,
 		})
 		return
 	}

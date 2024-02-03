@@ -43,6 +43,7 @@ func main() {
 	r := gin.Default()
 	r.Use(otelgin.Middleware(serviceName))
 	r.GET("/trackids/:id", controllers.ReadTrackid)
+	r.GET("/tracknumid/:tid", controllers.ReadTid)
 	r.GET("/trackids", controllers.ReadTrackids)
 	r.POST("/trackids", controllers.CreateTrackid)
 	r.PUT("/trackids/:id", controllers.UpdateTrackid)
